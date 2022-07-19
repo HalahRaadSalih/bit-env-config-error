@@ -27,7 +27,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "my-scope"
+    "defaultScope": "zenput-spike.bit-env-error"
   },
   /**
    * main configuration for component dependency resolution.
@@ -39,7 +39,13 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {},
-      "peerDependencies": {}
+      "peerDependencies": {
+        "@emotion/react": "11.9.3",
+                "@emotion/styled": "11.9.3",
+                "@mui/material": "5.9.0",
+                "react": "18.1.0",
+                "react-dom": "18.1.0"
+      }
     }
   },
   /**
