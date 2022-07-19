@@ -59,6 +59,12 @@
     /**
      * "*" is a special rule which applied on all components in the workspace.
      **/
+    "{extensions/**}": {
+      "teambit.harmony/aspect": {}
+    },
+    "{ui/**}": {
+      "zenput-spike.bit-env-error/extensions/my-react": {}
+    },
     "*": {
       /**
        * uncomment to apply the chosen environment on all components.
