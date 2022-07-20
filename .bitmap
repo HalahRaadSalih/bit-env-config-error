@@ -11,7 +11,7 @@
 {
     "extensions/my-react": {
         "scope": "",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "bit-env-error/extensions/my-react"
     },
@@ -20,6 +20,12 @@
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "my-scope/ui/my-welcome"
+    },
+    "ui/storybook": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "my-scope/ui/Storybook"
     },
     "$schema-version": "14.9.0"
 }
