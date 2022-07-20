@@ -15,7 +15,7 @@ import { TsConfigTransformer, TypescriptConfigMutator } from '@teambit/typescrip
 
 const tsconfig = require('./typescript/tsconfig.json');
 const transformer: TsConfigTransformer = (config: TypescriptConfigMutator) => {
-    config.setTsConfig(tsconfig).setArtifactName('declaration').setShouldCopyNonSupportedFiles(false).setOutDir('dist');
+    config.setTsConfig(tsconfig).setArtifactName('declaration').setShouldCopyNonSupportedFiles(false);
     return config;
 };
 export class MyReactMain {
@@ -37,10 +37,6 @@ export class MyReactMain {
       //  buildConfig: [buildConfigTransformer],
     //};
 
-      react.useTypescript({
-        buildConfig: [transformer],
-        devConfig: [transformer]
-    })
     const MyReactEnv = react.compose([
       /**
        * Uncomment to override the config files for TypeScript, Webpack or Jest
@@ -66,6 +62,10 @@ export class MyReactMain {
       //  ]
       //}),
 
+      react.useTypescript({
+        buildConfig: [transformer],
+        devConfig: [transformer]
+    }),
       /**
        * override the Prettier default config here the check your formatting
        * @example
