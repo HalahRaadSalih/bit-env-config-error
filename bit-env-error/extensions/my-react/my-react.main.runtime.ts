@@ -2,6 +2,8 @@ import { MainRuntime } from '@teambit/cli';
 import { ReactAspect, ReactMain, UseTypescriptModifiers } from '@teambit/react';
 import { EnvsAspect, EnvsMain } from '@teambit/envs';
 import { MyReactAspect } from './my-react.aspect';
+import { TsConfigTransformer, TypescriptConfigMutator } from '@teambit/typescript';
+
 //import {
 //  previewConfigTransformer,
 //  devServerConfigTransformer
@@ -11,6 +13,11 @@ import { MyReactAspect } from './my-react.aspect';
 //  buildConfigTransformer,
 //} from "./typescript/ts-transformer";
 
+const tsconfig = require('./typescript/tsconfig.json');
+const transformer: TsConfigTransformer = (config: TypescriptConfigMutator) => {
+    config.setTsConfig(tsconfig).setArtifactName('declaration').setShouldCopyNonSupportedFiles(false).setOutDir('dist');
+    return config;
+};
 export class MyReactMain {
   static slots = [];
 
@@ -30,6 +37,10 @@ export class MyReactMain {
       //  buildConfig: [buildConfigTransformer],
     //};
 
+      react.useTypescript({
+        buildConfig: [transformer],
+        devConfig: [transformer]
+    })
     const MyReactEnv = react.compose([
       /**
        * Uncomment to override the config files for TypeScript, Webpack or Jest
