@@ -11,21 +11,15 @@
 {
     "extensions/my-react": {
         "scope": "",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "bit-env-error/extensions/my-react"
     },
     "ui/my-welcome": {
         "scope": "",
-        "version": "",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "my-scope/ui/my-welcome",
-        "config": {
-            "zenput-spike.bit-env-error/extensions/my-react": {},
-            "teambit.envs/envs": {
-                "env": "zenput-spike.bit-env-error/extensions/my-react"
-            }
-        }
+        "rootDir": "my-scope/ui/my-welcome"
     },
     "$schema-version": "14.9.0"
 }
