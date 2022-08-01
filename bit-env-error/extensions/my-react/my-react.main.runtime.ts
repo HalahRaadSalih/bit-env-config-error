@@ -15,7 +15,7 @@ import { TsConfigTransformer, TypescriptConfigMutator } from '@teambit/typescrip
 
 const tsconfig = require('./typescript/tsconfig.json');
 const transformer: TsConfigTransformer = (config: TypescriptConfigMutator) => {
-    config.setTsConfig(tsconfig).setArtifactName('declaration').setShouldCopyNonSupportedFiles(false);
+    config.mergeTsConfig(tsconfig).setArtifactName('declaration').setShouldCopyNonSupportedFiles(false);
     return config;
 };
 export class MyReactMain {
